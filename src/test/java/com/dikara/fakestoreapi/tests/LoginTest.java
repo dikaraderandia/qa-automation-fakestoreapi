@@ -1,7 +1,7 @@
 package com.dikara.fakestoreapi.tests;
 
 import com.dikara.fakestoreapi.api.LoginAPI;
-import com.dikara.fakestoreapi.data.LoginDataProvider;
+import com.dikara.fakestoreapi.data.DataProvider;
 import com.dikara.fakestoreapi.dto.login.LoginRequest;
 import com.dikara.fakestoreapi.spec.RequestSpec;
 import com.dikara.fakestoreapi.spec.ResponseSpec;
@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 public class LoginTest extends RequestSpec {
 
 
-    @Test(dataProvider = "loginData", dataProviderClass = LoginDataProvider.class)
+    @Test(dataProvider = "loginData", dataProviderClass = DataProvider.class)
     public void loginTestDataDriven(LoginRequest user, int expectedStatus){
         LoginAPI loginAPI = new LoginAPI(getRequest());
 

@@ -1,11 +1,10 @@
 package com.dikara.fakestoreapi.data;
 
 import com.dikara.fakestoreapi.dto.login.LoginRequest;
-import org.testng.annotations.DataProvider;
 
-public class LoginDataProvider {
+public class DataProvider {
 
-    @DataProvider (name = "loginData")
+    @org.testng.annotations.DataProvider(name = "loginData")
     public Object[][] loginData(){
         return new Object[][]{
                 {
@@ -34,4 +33,7 @@ public class LoginDataProvider {
                 },
         };
     }
+
+
+
 }
