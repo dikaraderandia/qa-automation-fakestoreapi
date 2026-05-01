@@ -36,4 +36,32 @@ public class DataProvider {
 
 
 
+    @org.testng.annotations.DataProvider(name = "productData")
+    public Object[][] productData(){
+        return new Object[][]{
+                {
+                       "abcd"
+
+                },
+
+
+                {
+                       "1"
+
+                },
+
+                {
+                        "-1"
+
+                },
+
+                {
+                        "9999"
+
+                }
+        };
+    }
+
+
+
 }

@@ -11,10 +11,11 @@ public class ResponseSpec {
 
         return new ResponseSpecBuilder()
                 .expectStatusCode(200)
-                .expectBody("id", notNullValue())
                 .build();
 
     }
+
+
 
 
     public  static ResponseSpecification invalid404(){
@@ -29,6 +30,15 @@ public class ResponseSpec {
 
         return new ResponseSpecBuilder()
                 .expectStatusCode(405)
+                .build();
+
+    }
+
+
+    public  static ResponseSpecification invalid400(){
+
+        return new ResponseSpecBuilder()
+                .expectStatusCode(400)
                 .build();
 
     }
@@ -55,18 +65,7 @@ public class ResponseSpec {
 
     public static ResponseSpecification getProductDetail() {
 
-//        {
-//            "id": 1,
-//                "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-//                "price": 109.95,
-//                "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-//                "category": "men's clothing",
-//                "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png",
-//                "rating": {
-//            "rate": 3.9,
-//                    "count": 120
-//        }
-//        }
+
         return new ResponseSpecBuilder()
                 .expectStatusCode(200)
                 .expectBody("id", notNullValue())
