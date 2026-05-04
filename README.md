@@ -11,6 +11,11 @@ It simulates real-world QA practices by testing authentication, product, and use
 
 ---
 
+## 📄 Test Cases
+
+Detailed test cases can be found here:
+👉 [View Test Cases](https://docs.google.com/spreadsheets/d/1rfGe800tas0Y0BgKfc0Qhge64RzCrRBvutWf3UepwXI/edit?usp=sharing)
+
 ## 🎯 Scope
 - Authentication API (Login)
 - Product API (Get All Products, Get Product Detail)
