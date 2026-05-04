@@ -1,0 +1,597 @@
+{
+  "info": {
+    "_postman_id": "127e8d1c-98e2-40e9-9c05-dae10681b7d8",
+    "name": "Ecommerce store api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "37860870"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200 or 201\", function () {\r",
+                  "    pm.response.to.have.status(200, 201);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Token exists\", function () {\r",
+                  "    var jsonData = pm.response.json();\r",
+                  "    pm.expect(jsonData.token).to.exist;\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"username\": \"mor_2314\",\r\n  \"password\": \"83r5^_\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://fakestoreapi.com/auth/login",
+              "protocol": "https",
+              "host": [
+                "fakestoreapi",
+                "com"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login-Invalid Password",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status Code is 400\", function () {\r",
+                  "    pm.response.to.have.status(400)\r",
+                  "     //pm.expect(pm.response.code).to.be.oneOf([400, 401]);\r",
+                  "     \r",
+                  "});\r",
+                  "\r",
+                  "\r",
+                  "pm.test(\"Message Exist\", function () {\r",
+                  "   let responseText = pm.response.text();\r",
+                  "\r",
+                  "   //pm.expect(responseText).to.include(\"username and password are not provided in JSON format\")\r",
+                  "    pm.expect(responseText).to.exist;\r",
+                  "\r",
+                  "   \r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"username\": \"mor_2314\",\r\n  \"password\": \"asdasda\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://fakestoreapi.com/auth/login",
+              "protocol": "https",
+              "host": [
+                "fakestoreapi",
+                "com"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Login-Invalid Password",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"username\": \"mor_2314\",\r\n  \"password\": \"\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://fakestoreapi.com/auth/login",
+                  "protocol": "https",
+                  "host": [
+                    "fakestoreapi",
+                    "com"
+                  ],
+                  "path": [
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "",
+              "header": [],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "username and password are not provided in JSON format"
+            }
+          ]
+        },
+        {
+          "name": "login-Empty Username",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"username\": \"\",\r\n  \"password\": \"83r5^_\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://fakestoreapi.com/auth/login",
+              "protocol": "https",
+              "host": [
+                "fakestoreapi",
+                "com"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Login-Empty Password",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"username\": \"mor_2314\",\r\n  \"password\": \"\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://fakestoreapi.com/auth/login",
+                  "protocol": "https",
+                  "host": [
+                    "fakestoreapi",
+                    "com"
+                  ],
+                  "path": [
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "",
+              "header": [],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "username and password are not provided in JSON format"
+            }
+          ]
+        },
+        {
+          "name": "login-Missing password",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status Code is 400\", function () {\r",
+                  "    pm.response.to.have.status(400)\r",
+                  "     //pm.expect(pm.response.code).to.be.oneOf([400, 401]);\r",
+                  "     \r",
+                  "});\r",
+                  "\r",
+                  "\r",
+                  "pm.test(\"Message Exist\", function () {\r",
+                  "   let responseText = pm.response.text();\r",
+                  "\r",
+                  "   pm.expect(responseText).to.include(\"username and password are not provided in JSON format\")\r",
+                  "    //pm.expect(responseText).to.exist;\r",
+                  "\r",
+                  "   \r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"username\": \"mor_2314\",\r\n  \"password\": \"\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://fakestoreapi.com/auth/login",
+              "protocol": "https",
+              "host": [
+                "fakestoreapi",
+                "com"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Login-Invalid Password",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"username\": \"mor_2314\",\r\n  \"password\": \"\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://fakestoreapi.com/auth/login",
+                  "protocol": "https",
+                  "host": [
+                    "fakestoreapi",
+                    "com"
+                  ],
+                  "path": [
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "",
+              "header": [],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "username and password are not provided in JSON format"
+            }
+          ]
+        },
+        {
+          "name": "login-password null",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"username\": \"mor_2314\",\r\n  \"password\": \"\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://fakestoreapi.com/auth/login",
+              "protocol": "https",
+              "host": [
+                "fakestoreapi",
+                "com"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Login-Invalid Password",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"username\": \"mor_2314\",\r\n  \"password\": \"\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://fakestoreapi.com/auth/login",
+                  "protocol": "https",
+                  "host": [
+                    "fakestoreapi",
+                    "com"
+                  ],
+                  "path": [
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "",
+              "header": [],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "username and password are not provided in JSON format"
+            }
+          ]
+        },
+        {
+          "name": "login - wrong method",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://fakestoreapi.com/auth/login",
+              "protocol": "https",
+              "host": [
+                "fakestoreapi",
+                "com"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Product",
+      "item": [
+        {
+          "name": "Get Product",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Get Product- wrong url",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://fakestoreapi.com/productss",
+                  "protocol": "https",
+                  "host": [
+                    "fakestoreapi",
+                    "com"
+                  ],
+                  "path": [
+                    "productss"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": null,
+              "header": null,
+              "cookie": [],
+              "body": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n<head>\r\n    <meta charset=\"utf-8\">\r\n    <title>Error</title>\r\n</head>\r\n\r\n<body>\r\n    <pre>Cannot GET /productss</pre>\r\n    <script>\r\n        (function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML=\"window.__CF$cv$params={r:'9f45ab08ffbe8bd0',t:'MTc3NzU0Mjg5OA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);\";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();\r\n    </script>\r\n</body>\r\n\r\n</html>"
+            },
+            {
+              "name": "Get Product-wrong method using post",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "https://fakestoreapi.com/products",
+                  "protocol": "https",
+                  "host": [
+                    "fakestoreapi",
+                    "com"
+                  ],
+                  "path": [
+                    "products"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "",
+              "header": [],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\r\n    \"id\": 21\r\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Detail Product",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Get Detail Product - wrong param type",
+              "originalRequest": {
+                "method": "GET",
+                "header": []
+              },
+              "_postman_previewlanguage": null,
+              "header": null,
+              "cookie": [],
+              "body": null
+            },
+            {
+              "name": "Get Detail Product - Boundary test high",
+              "originalRequest": {
+                "method": "GET",
+                "header": []
+              },
+              "_postman_previewlanguage": null,
+              "header": null,
+              "cookie": [],
+              "body": null
+            },
+            {
+              "name": "Get Detail Product - Boundary test low value",
+              "originalRequest": {
+                "method": "GET",
+                "header": []
+              },
+              "_postman_previewlanguage": null,
+              "header": null,
+              "cookie": [],
+              "body": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Get Users",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "Get Users Details",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "Get Users Details - param high",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://fakestoreapi.com/users/9999",
+              "protocol": "https",
+              "host": [
+                "fakestoreapi",
+                "com"
+              ],
+              "path": [
+                "users",
+                "9999"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Users Details - param low",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://fakestoreapi.com/users/9999",
+              "protocol": "https",
+              "host": [
+                "fakestoreapi",
+                "com"
+              ],
+              "path": [
+                "users",
+                "9999"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Users Details wrong format param",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
