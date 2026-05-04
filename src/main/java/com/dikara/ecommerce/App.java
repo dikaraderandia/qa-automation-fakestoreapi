@@ -1,4 +1,4 @@
-package com.dikara.fakestoreapi;
+package com.dikara.ecommerce;
 
 /**
  * Hello world!

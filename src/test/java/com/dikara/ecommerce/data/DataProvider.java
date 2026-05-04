@@ -1,6 +1,6 @@
-package com.dikara.fakestoreapi.data;
+package com.dikara.ecommerce.data;
 
-import com.dikara.fakestoreapi.dto.login.LoginRequest;
+import com.dikara.ecommerce.dto.login.LoginRequest;
 
 public class DataProvider {
 

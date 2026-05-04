@@ -1,4 +1,4 @@
-package com.dikara.fakestoreapi.api;
+package com.dikara.ecommerce.api;
 
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;

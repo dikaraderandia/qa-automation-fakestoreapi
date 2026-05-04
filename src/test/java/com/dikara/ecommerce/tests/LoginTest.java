@@ -1,10 +1,10 @@
-package com.dikara.fakestoreapi.tests;
+package com.dikara.ecommerce.tests;
 
-import com.dikara.fakestoreapi.api.LoginAPI;
-import com.dikara.fakestoreapi.data.DataProvider;
-import com.dikara.fakestoreapi.dto.login.LoginRequest;
-import com.dikara.fakestoreapi.spec.RequestSpec;
-import com.dikara.fakestoreapi.spec.ResponseSpec;
+import com.dikara.ecommerce.api.LoginAPI;
+import com.dikara.ecommerce.data.DataProvider;
+import com.dikara.ecommerce.dto.login.LoginRequest;
+import com.dikara.ecommerce.spec.RequestSpec;
+import com.dikara.ecommerce.spec.ResponseSpec;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 

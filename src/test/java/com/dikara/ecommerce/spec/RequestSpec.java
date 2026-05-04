@@ -1,4 +1,4 @@
-package com.dikara.fakestoreapi.spec;
+package com.dikara.ecommerce.spec;
 
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;

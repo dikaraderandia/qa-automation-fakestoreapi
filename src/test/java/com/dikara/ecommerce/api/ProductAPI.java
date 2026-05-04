@@ -1,10 +1,8 @@
-package com.dikara.fakestoreapi.api;
+package com.dikara.ecommerce.api;
 
-import com.dikara.fakestoreapi.dto.login.LoginRequest;
-import com.dikara.fakestoreapi.spec.RequestSpec;
+import com.dikara.ecommerce.spec.RequestSpec;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import org.testng.annotations.Test;
 
 public class ProductAPI extends RequestSpec {
 

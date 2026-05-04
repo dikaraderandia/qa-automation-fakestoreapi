@@ -1,4 +1,4 @@
-package com.dikara.fakestoreapi;
+package com.dikara.ecommerce;
 
 import org.testng.annotations.Test;
 import static org.testng.Assert.assertTrue;

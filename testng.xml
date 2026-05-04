@@ -4,9 +4,9 @@
 
     <test name="API Tests">
         <classes>
-            <class name="com.dikara.fakestoreapi.tests.ProductTest"/>
-            <class name="com.dikara.fakestoreapi.tests.LoginTest"/>
-            <class name="com.dikara.fakestoreapi.tests.UserTest"/>
+            <class name="com.dikara.ecommerce.tests.ProductTest"/>
+            <class name="com.dikara.ecommerce.tests.LoginTest"/>
+            <class name="com.dikara.ecommerce.tests.UserTest"/>
         </classes>
     </test>
 

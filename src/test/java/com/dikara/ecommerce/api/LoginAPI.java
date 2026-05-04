@@ -1,6 +1,6 @@
-package com.dikara.fakestoreapi.api;
+package com.dikara.ecommerce.api;
 
-import com.dikara.fakestoreapi.dto.login.LoginRequest;
+import com.dikara.ecommerce.dto.login.LoginRequest;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 

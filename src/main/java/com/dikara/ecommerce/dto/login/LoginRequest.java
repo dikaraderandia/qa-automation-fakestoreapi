@@ -1,4 +1,4 @@
-package com.dikara.fakestoreapi.dto.login;
+package com.dikara.ecommerce.dto.login;
 
 public class LoginRequest {
 
