@@ -8,6 +8,7 @@ import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
+import static org.testng.Assert.assertNotNull;
 import static org.testng.Assert.assertTrue;
 
 public class ProductTest extends RequestSpec {
@@ -46,7 +47,14 @@ public class ProductTest extends RequestSpec {
         Response response= productAPI.getProductDetail("1");
         response.then()
                 .spec(ResponseSpec.getProductDetail())
-                .body(matchesJsonSchemaInClasspath("schema/product-detail-schema.json"));
+                .body(matchesJsonSchemaInClasspath("schema/product-detail-schema.json"))
+                .log().all();;
+
+        assertNotNull(response.jsonPath().get("price"));
+        assertTrue(response.jsonPath().getFloat("price" )>0);
+
+        assertTrue(response.jsonPath().getFloat("rating.rate" )>0);
+
     }
 
     @Test(dataProvider = "productData", dataProviderClass = DataProvider.class)
