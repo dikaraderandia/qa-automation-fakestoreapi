@@ -79,4 +79,42 @@ public class ResponseSpec {
                 .expectBody("rating.count", notNullValue())
                 .build();
     }
+
+
+    public static ResponseSpecification getUserDetail() {
+
+//        {
+//            "address": {
+//            "geolocation": {
+//                "lat": "-37.3159",
+//                        "long": "81.1496"
+//            },
+//            "city": "kilcoole",
+//                    "street": "new road",
+//                    "number": 7682,
+//                    "zipcode": "12926-3874"
+//        },
+//            "id": 1,
+//                "email": "john@gmail.com",
+//                "username": "johnd",
+//                "password": "m38rmF$",
+//                "name": {
+//            "firstname": "john",
+//                    "lastname": "doe"
+//        },
+//            "phone": "1-570-236-7033",
+//                "__v": 0
+//        }
+        return new ResponseSpecBuilder()
+                .expectStatusCode(200)
+                .expectBody("id", notNullValue())
+                .expectBody("email", notNullValue())
+                .expectBody("username", notNullValue())
+                .expectBody("address", notNullValue())
+                .expectBody("password", notNullValue())
+                .expectBody("phone", notNullValue())
+                .build();
+
+
+    }
 }

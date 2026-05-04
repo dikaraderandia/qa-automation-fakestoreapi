@@ -44,9 +44,8 @@ public class DataProvider {
 
                 },
 
-
                 {
-                       "1"
+                    "1"
 
                 },
 
@@ -59,6 +58,13 @@ public class DataProvider {
                         "9999"
 
                 }
+        };
+    }
+
+    @org.testng.annotations.DataProvider(name ="userData")
+    public Object[] UserData(){
+        return new Object[][]{
+                {"1", 200},{"9999", 200}, {"-1",400}, {"abcd",400}
         };
     }
 
