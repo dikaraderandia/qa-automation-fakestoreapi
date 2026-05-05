@@ -19,4 +19,27 @@ public class LoginAPI {
                 .body(login)
                 .post("/auth/login");
     }
+
+
+    public Response loginMissingField(){
+        return request
+                .body("{\"username\":\"mor_2314\"}")
+                .post("/auth/login");
+    }
+
+    public Response loginWrongMethod(){
+
+        return request
+                .get("/auth/login");
+    }
+
+
+    public Response loginWithInvalidToken (){
+        String expiredToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXIiOiJtb3JfMjMxNCIsImlhdCI6MTc3Nzk0OTU5Nn0.YOWLCVm8tJHkQo3HVB37tC2FgoLJpq1sUHhJIaWDMrk";
+        return request
+                .header("Authorization", "Bearer "+ expiredToken)
+                .get("/users");
+
+
+    }
 }
