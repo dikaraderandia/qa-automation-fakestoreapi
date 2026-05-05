@@ -4,11 +4,11 @@ import com.dikara.ecommerce.dto.login.LoginRequest;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
-public class LoginAPI {
+public class AuthClient {
 
     private RequestSpecification request;
 
-    public LoginAPI(RequestSpecification request){
+    public AuthClient(RequestSpecification request){
 
         System.out.println("Masuk API, request: " + request);
         this.request = request;
@@ -18,6 +18,13 @@ public class LoginAPI {
         return request
                 .body(login)
                 .post("/auth/login");
+    }
+
+    public String getToken(LoginRequest login){
+        return login(login)
+                .then()
+                .extract()
+                .path("token");
     }
 
 
@@ -38,6 +45,16 @@ public class LoginAPI {
         String expiredToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXIiOiJtb3JfMjMxNCIsImlhdCI6MTc3Nzk0OTU5Nn0.YOWLCVm8tJHkQo3HVB37tC2FgoLJpq1sUHhJIaWDMrk";
         return request
                 .header("Authorization", "Bearer "+ expiredToken)
+                .get("/users");
+
+
+    }
+
+
+    public Response loginWithToken (String token){
+
+        return request
+                .header("Authorization", "Bearer "+ token)
                 .get("/users");
 
 
