@@ -1,5 +1,5 @@
 # qa-automation-ecommerce
-Automated API testing project for FakeStoreAPI, covering key endpoints such as products, users, and carts. Built using RestAssured with structured test cases, validations, and reusable specifications.
+Automated API testing project for ecommerce API, covering key endpoints such as products, users, and carts. Built using RestAssured with structured test cases, validations, and reusable specifications.
 
 
 # API Automation Testing – E-Commerce API
